@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makeover Salon</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#0f0f0f;color:white;}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:#111;
+  position:sticky;
+  top:0;
+}
+
+.logo{display:flex;align-items:center;}
+.logo img{width:50px;margin-right:10px;}
+
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:60px 20px;
+  background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+  url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9');
+  background-size:cover;
+}
+
+.hero h1{font-size:40px;}
+.hero p{margin:10px 0;}
+
+.btn{
+  padding:12px 25px;
+  background:#ff4da6;
+  border:none;
+  border-radius:25px;
+  color:white;
+  cursor:pointer;
+}
+
+/* SERVICES */
+.services{
+  padding:50px 20px;
+  text-align:center;
+}
+
+.service-box{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  margin-top:30px;
+}
+
+.card{
+  background:#1a1a1a;
+  padding:25px;
+  border-radius:15px;
+  cursor:pointer;
+  transition:0.3s;
+  font-size:18px;
+}
+
+.card:hover{
+  transform:scale(1.05);
+  background:#222;
+}
+
+/* PAGES */
+section{display:none;padding:50px 20px;}
+.active{display:block;}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+
+.grid img{
+  width:100%;
+  border-radius:10px;
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+  margin-top:40px;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+  color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="logo.png">
+    <h2>Makeover</h2>
+  </div>
+  <nav>
+    <a href="#" onclick="showPage('home')">Home</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="active">
+
+<div class="hero">
+  <h1>Enhance Your Beauty</h1>
+  <p>Hair • Skin • Nails • Makeup</p>
+  <button class="btn" onclick="window.open('https://wa.me/91XXXXXXXXXX')">
+    Book Now
+  </button>
+</div>
+
+<div class="services">
+  <h2>Our Services</h2>
+
+  <div class="service-box">
+    <div class="card" onclick="showPage('hair')">💇 Hair Styling</div>
+    <div class="card" onclick="showPage('skin')">✨ Skin Care</div>
+    <div class="card" onclick="showPage('nails')">💅 Nail Art</div>
+    <div class="card" onclick="showPage('makeup')">💄 Makeup</div>
+  </div>
+
+  <div class="contact">
+    <p>📞 +91 XXXXX XXXXX</p>
+    <p>📍 Your Location</p>
+  </div>
+
+</div>
+
+</section>
+
+<!-- HAIR -->
+<section id="hair">
+<h2>Hair Styling</h2>
+<p>We provide professional hair styling services with modern trends and expert care to give you the best look.</p>
+
+<div class="grid">
+<img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e">
+<img src="https://images.unsplash.com/photo-1500840216050-6ffa99d75160">
+</div>
+</section>
+
+<!-- SKIN -->
+<section id="skin">
+<h2>Skin Care</h2>
+<p>Our skin treatments help you achieve glowing and healthy skin with premium products and expert techniques.</p>
+
+<div class="grid">
+<img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2">
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+</div>
+</section>
+
+<!-- NAILS -->
+<section id="nails">
+<h2>Nail Art</h2>
+<p>Creative and stylish nail art designs crafted by professionals to match your personality.</p>
+
+<div class="grid">
+<img src="https://images.unsplash.com/photo-1604654894610-df63bc536371">
+<img src="https://images.unsplash.com/photo-1583241800698-2c2b5a8f9b5e">
+</div>
+</section>
+
+<!-- MAKEUP -->
+<section id="makeup">
+<h2>Makeup</h2>
+<p>Professional makeup services for all occasions to enhance your natural beauty and confidence.</p>
+
+<div class="grid">
+<img src="https://images.unsplash.com/photo-1498843053639-170ff2122f35">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+</div>
+</section>
+
+<footer>
+  <p>© 2026 Makeover Salon | Designed with care</p>
+</footer>
+
+<script>
+function showPage(page){
+  document.querySelectorAll("section").forEach(sec=>{
+    sec.classList.remove("active");
+  });
+  document.getElementById(page).classList.add("active");
+}
+</script>
+
+</body>
+</html>
